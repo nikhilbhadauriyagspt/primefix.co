@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, ArrowUpRight, Globe, Mail, Loader2, CheckCircle2 } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, ArrowUpRight, Globe, Mail, Loader2, CheckCircle2, MapPin, Phone } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import API_BASE_URL from '../config';
@@ -60,7 +60,7 @@ export default function Footer() {
           </div>
 
           {/* Links Grid */}
-          <div className="lg:col-span-5 grid grid-cols-2 gap-8">
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div>
               <h4 className="font-urbanist text-[10px] font-black tracking-[0.3em] uppercase text-blue-600 mb-8">Product Line</h4>
               <ul className="space-y-4">
@@ -79,6 +79,23 @@ export default function Footer() {
                 <li><Link to="/return-policy" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Return Policy</Link></li>
                 <li><Link to="/shipping-policy" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Shipping Policy</Link></li>
                 <li><Link to="/contact" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Customer Support</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-urbanist text-[10px] font-black tracking-[0.3em] uppercase text-blue-600 mb-8">Contact Us</h4>
+              <ul className="space-y-4 text-slate-500 text-sm font-bold leading-relaxed">
+                <li className="flex items-start gap-3">
+                  <MapPin size={16} className="text-blue-600 shrink-0 mt-1" />
+                  <span>3014 Dauphine St Ste A PM3 357287, New Orleans, LA 70117, USA</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail size={16} className="text-blue-600 shrink-0" />
+                  <a href="mailto:info@primefixsolutions.co" className="hover:text-black">info@primefixsolutions.co</a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Phone size={16} className="text-blue-600 shrink-0" />
+                  <a href="tel:+14025089751" className="hover:text-black">+1 (402) 508-9751</a>
+                </li>
               </ul>
             </div>
           </div>
