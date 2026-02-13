@@ -10,8 +10,8 @@ const faqData = [
       { q: "Do I need an account to purchase?", a: "No. You can checkout as a guest. However, creating an account helps you track orders and access your purchase history." },
       { q: "How can I check my order status?", a: "Log into your account and visit My Orders to view real-time updates. You will also receive email notifications." },
       { q: "Can I modify or cancel my order after placing it?", a: "Orders can be modified or canceled before shipping. Once the item is dispatched, cancellations aren’t possible." },
-      { q: "What payment methods do you accept?", a: "We accept major credit/debit cards, net banking, UPI, and secure online payment gateways." },
-      { q: "Is shopping on Prime Fix Solutions secure?", a: "Yes. All transactions are encrypted and processed through verified, PCI-compliant payment networks." }
+      { q: "What payment methods do you accept?", a: "We accept major credit/debit cards (Visa, Mastercard), PayPal, and other secure digital payment options." },
+      { q: "Is shopping on Prime Fix Solutions secure?", a: "Yes. All transactions are encrypted and processed through verified, PCI-compliant payment networks including PayPal Secure." }
     ]
   },
   {
@@ -136,7 +136,7 @@ export default function FAQ() {
           >
             <HelpCircle size={14} /> Help Center
           </motion.div>
-          <h1 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter uppercase leading-none mb-8">
+          <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase leading-none mb-8">
             Frequently <span className="text-slate-400 italic">Asked Questions.</span>
           </h1>
           
@@ -179,7 +179,7 @@ export default function FAQ() {
               <div className="mt-12 p-8 bg-slate-900 rounded-[2.5rem] text-white overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-blue-600/20 blur-3xl rounded-full" />
                 <h4 className="text-lg font-black uppercase tracking-tight mb-2">Still need help?</h4>
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-8">Our team is available 24/7</p>
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-8">Our team is available to assist</p>
                 <div className="space-y-4">
                   <a href="mailto:support@primefix.co" className="flex items-center gap-4 text-xs font-bold hover:text-blue-400 transition-colors">
                     <div className="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center"><Mail size={16} /></div>

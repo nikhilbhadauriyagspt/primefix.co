@@ -34,20 +34,12 @@ export default function BrandShowcase({ brands = [] }) {
           </div>
 
           {/* Right: Scrolling Pills */}
-          <div className="w-full md:w-3/4 overflow-hidden relative py-4">
+          <div className="w-full md:w-3/4 overflow-hidden relative py-4 pause-on-hover">
             {/* Gradients for smooth fade */}
             <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-900 to-transparent z-20" />
             <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-900 to-transparent z-20" />
 
-            <motion.div 
-              className="flex items-center gap-6 whitespace-nowrap"
-              animate={{ x: [0, -2000] }}
-              transition={{ 
-                duration: 40, 
-                repeat: Infinity, 
-                ease: "linear" 
-              }}
-            >
+            <div className="animate-marquee flex items-center gap-6 whitespace-nowrap">
               {doubleBrands.map((brand, i) => (
                 <Link 
                   key={`${brand.id}-${i}`}
@@ -74,7 +66,7 @@ export default function BrandShowcase({ brands = [] }) {
                   </div>
                 </Link>
               ))}
-            </motion.div>
+            </div>
           </div>
 
         </div>

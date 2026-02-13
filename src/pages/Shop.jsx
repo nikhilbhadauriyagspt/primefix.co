@@ -89,18 +89,31 @@ export default function Shop() {
   return (
     <div className="bg-white min-h-screen font-urbanist">
       
-      {/* --- MINIMAL HEADER --- */}
+      {/* --- REFINED HEADER --- */}
       <div className="pt-40 pb-12 px-6 md:px-10 lg:px-12 bg-white">
         <div className="max-w-[1920px] mx-auto border-b border-gray-100 pb-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <div className="space-y-2">
-              <h1 className="text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none">
-                The <span className="text-blue-600 italic">Catalog.</span>
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 bg-blue-50 w-fit px-4 py-1.5 rounded-full border border-blue-100">
+                <div className="h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse" />
+                <span className="text-[10px] font-black text-blue-600 uppercase tracking-[0.3em]">Official Inventory</span>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                The <span className="text-slate-400 italic">Catalog.</span>
               </h1>
-              <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-slate-400">
-                <span>{total} premium items</span>
+              <p className="text-slate-500 text-sm md:text-base font-bold max-w-xl leading-relaxed">
+                Explore our curated selection of high-performance {category || brand || 'computing'} solutions, engineered for professionals and tech enthusiasts.
+              </p>
+              <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-slate-400 pt-2">
+                <span className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100">
+                   <SlidersHorizontal size={12} className="text-blue-600" />
+                   {total} premium items
+                </span>
                 <span className="h-1 w-1 rounded-full bg-slate-300"></span>
-                <span>Sorted by {sort.replace('_', ' ')}</span>
+                <span className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100">
+                   <ArrowUpDown size={12} className="text-blue-600" />
+                   Sorted by {sort.replace('_', ' ')}
+                </span>
               </div>
             </div>
 
@@ -109,13 +122,13 @@ export default function Shop() {
                <div className="relative group">
                   <input 
                     type="text" 
-                    placeholder="Search catalog..."
+                    placeholder="SEARCH TECH..."
                     value={search}
                     onChange={(e) => updateFilter('search', e.target.value)}
-                    className="pl-5 pr-12 py-3.5 bg-gray-50 border border-gray-100 rounded-2xl text-[11px] font-bold focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-500/5 focus:border-blue-500 transition-all w-64 md:w-80"
+                    className="pl-5 pr-14 h-14 bg-gray-50 border border-gray-100 rounded-2xl text-[11px] font-bold focus:outline-none focus:bg-white focus:ring-4 focus:ring-blue-500/5 focus:border-blue-500 transition-all w-64 md:w-96 shadow-inner"
                   />
-                  <div className="absolute right-2 top-2 h-8 w-8 bg-slate-900 text-white rounded-xl flex items-center justify-center">
-                    <Search size={14} />
+                  <div className="absolute right-2 top-2 h-10 w-10 bg-slate-900 text-white rounded-xl flex items-center justify-center shadow-lg">
+                    <Search size={16} />
                   </div>
                </div>
             </div>

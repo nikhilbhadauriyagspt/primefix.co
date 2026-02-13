@@ -240,7 +240,7 @@ export default function ProductDetail() {
                   <div className="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-900">
                     <RefreshCcw size={18} />
                   </div>
-                  <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">Easy Returns</span>
+                  <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">7-Day Returns</span>
                 </div>
               </div>
             </div>

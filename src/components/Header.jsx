@@ -156,26 +156,6 @@ export default function Header() {
           {/* --- ROW 1: TOP BAR --- */}
           <div className="flex items-center justify-between px-6 md:px-10 lg:px-12 py-3 lg:py-4">
             <div className="flex-1 flex justify-start">
-              <button 
-                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                className="group relative h-10 w-10 flex flex-col items-center justify-center gap-1.5 transition-all lg:h-12 lg:w-12"
-              >
-                <motion.span 
-                  animate={isSidebarOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-                  className="w-6 lg:w-8 h-[2px] lg:h-[2.5px] bg-black rounded-full block origin-center"
-                />
-                <motion.span 
-                  animate={isSidebarOpen ? { opacity: 0 } : { opacity: 1 }}
-                  className="w-6 lg:w-8 h-[2px] lg:h-[2.5px] bg-black rounded-full block"
-                />
-                <motion.span 
-                  animate={isSidebarOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-                  className="w-4 lg:w-5 h-[2px] lg:h-[2.5px] bg-black rounded-full block origin-center self-end group-hover:w-8"
-                />
-              </button>
-            </div>
-
-            <div className="flex-1 flex justify-center">
               <Link to="/" className="flex items-center gap-2">
                 <img src="/logo/logo.png" alt="PRIMEFIX" className="h-7 lg:h-10 w-auto object-contain" />
               </Link>
@@ -407,7 +387,7 @@ export default function Header() {
                     placeholder="WHAT ARE YOU LOOKING FOR?"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-transparent border-b-4 border-gray-100 pb-6 text-4xl md:text-6xl font-black text-slate-900 placeholder:text-gray-100 focus:outline-none focus:border-blue-600 transition-all uppercase tracking-tighter"
+                    className="w-full bg-transparent border-b-4 border-gray-100 pb-6 text-2xl md:text-4xl font-black text-slate-900 placeholder:text-gray-100 focus:outline-none focus:border-blue-600 transition-all uppercase tracking-tighter"
                   />
                   <button type="submit" className="absolute right-0 bottom-8 p-4 bg-blue-600 text-white rounded-2xl shadow-xl shadow-blue-600/20 hover:scale-105 active:scale-95 transition-all">
                     {isSearching ? <Loader2 className="animate-spin h-8 w-8" /> : <ArrowRight size={32} />}

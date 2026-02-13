@@ -52,10 +52,10 @@ export default function Contact() {
           >
             <MessageCircle size={14} /> Contact Hub
           </motion.div>
-          <h1 className="text-6xl md:text-8xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase mb-8">
+          <h1 className="text-4xl md:text-6xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase mb-8">
             Get in <br /> <span className="text-slate-400 italic">Touch.</span>
           </h1>
-          <p className="text-slate-500 text-lg font-bold leading-relaxed max-w-lg">
+          <p className="text-slate-500 text-base md:text-lg font-bold leading-relaxed max-w-lg">
             Have questions about our HP products or need technical support? Our expert team is ready to help you optimize your workflow.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function Contact() {
               </div>
               <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">Email Support</h4>
               <p className="text-sm font-black text-slate-900 uppercase">support@primefix.co</p>
-              <p className="text-[10px] font-bold text-slate-400 uppercase mt-1">24/7 Response Time</p>
+              <p className="text-[10px] font-bold text-slate-400 uppercase mt-1">Quick Response Time</p>
             </div>
 
             <div className="p-8 rounded-[2.5rem] bg-gray-50 border border-gray-100 group transition-all hover:bg-white hover:border-blue-500/20 hover:shadow-xl shadow-blue-600/5">
@@ -89,14 +89,14 @@ export default function Contact() {
                 <MapPin size={20} />
               </div>
               <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">Headquarters</h4>
-              <p className="text-sm font-black text-slate-900 uppercase">New Orleans, Louisiana</p>
-              <p className="text-[10px] font-bold text-slate-400 uppercase mt-1">United States of America</p>
+              <p className="text-sm font-black text-slate-900 uppercase">3014 Dauphine St Ste A PM3 357287</p>
+              <p className="text-[10px] font-bold text-slate-400 uppercase mt-1">New Orleans, LA 70117, USA</p>
             </div>
 
             {/* Quick Trust Card */}
             <div className="p-10 rounded-[3rem] bg-slate-900 text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-24 h-24 bg-blue-600/20 blur-3xl rounded-full" />
-              <ShieldCheck size={32} className="text-blue-400 mb-6" />
+              <img src="/brands/hp.jpg" alt="HP" className="h-10 w-auto object-contain rounded-xl mb-6 brightness-110" />
               <h4 className="text-lg font-black uppercase tracking-tight mb-2">HP Authorized</h4>
               <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Verified support & genuine parts guaranteed.</p>
             </div>

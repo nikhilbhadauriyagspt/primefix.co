@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, ArrowUpRight, Globe, Mail, Loader2, CheckCircle2, MapPin, Phone } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, ArrowUpRight, Globe, Mail, Loader2, CheckCircle2, MapPin, Phone, ShieldCheck } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import API_BASE_URL from '../config';
@@ -21,7 +21,7 @@ export default function Footer() {
         body: JSON.stringify({ email })
       });
       const data = await response.json();
-      
+
       if (data.status === 'success') {
         showToast(data.message, 'success');
         setEmail('');
@@ -38,10 +38,10 @@ export default function Footer() {
   return (
     <footer className="bg-white text-slate-900 pt-24 pb-12 font-snpro border-t border-gray-100">
       <div className="max-w-[1920px] mx-auto px-6 md:px-10 lg:px-12">
-        
+
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-24">
-          
+
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <div className="flex items-center gap-6 mb-8">
@@ -50,7 +50,7 @@ export default function Footer() {
               </Link>
               <div className="h-8 w-px bg-gray-200" />
               <div className="flex items-center gap-2">
-                <img src="/brands/hp.jpg" alt="HP Partner" className="h-6 w-auto object-contain" />
+                <img src="/brands/hp.jpg" alt="HP Partner" className="h-10 rounded-full w-auto object-contain" />
                 <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-tight">Authorized<br />Partner</span>
               </div>
             </div>
@@ -74,28 +74,20 @@ export default function Footer() {
             <div>
               <h4 className="font-urbanist text-[10px] font-black tracking-[0.3em] uppercase text-blue-600 mb-8">Support Center</h4>
               <ul className="space-y-4">
+                <li><Link to="/about" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">About Us</Link></li>
+                <li><Link to="/contact" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Contact Us</Link></li>
                 <li><Link to="/orders" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Track Order</Link></li>
                 <li><Link to="/faq" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Technical FAQ</Link></li>
-                <li><Link to="/return-policy" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Return Policy</Link></li>
-                <li><Link to="/shipping-policy" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Shipping Policy</Link></li>
-                <li><Link to="/contact" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Customer Support</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-urbanist text-[10px] font-black tracking-[0.3em] uppercase text-blue-600 mb-8">Contact Us</h4>
-              <ul className="space-y-4 text-slate-500 text-sm font-bold leading-relaxed">
-                <li className="flex items-start gap-3">
-                  <MapPin size={16} className="text-blue-600 shrink-0 mt-1" />
-                  <span>3014 Dauphine St Ste A PM3 357287, New Orleans, LA 70117, USA</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Mail size={16} className="text-blue-600 shrink-0" />
-                  <a href="mailto:info@primefixsolutions.co" className="hover:text-black">info@primefixsolutions.co</a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Phone size={16} className="text-blue-600 shrink-0" />
-                  <a href="tel:+14025089751" className="hover:text-black">+1 (402) 508-9751</a>
-                </li>
+              <h4 className="font-urbanist text-[10px] font-black tracking-[0.3em] uppercase text-blue-600 mb-8">Legal & Policies</h4>
+              <ul className="space-y-4">
+                <li><Link to="/privacy-policy" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Privacy Policy</Link></li>
+                <li><Link to="/terms-and-conditions" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Terms of Service</Link></li>
+                <li><Link to="/return-policy" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Return Policy</Link></li>
+                <li><Link to="/shipping-policy" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Shipping Policy</Link></li>
+                <li><Link to="/cookie-policy" className="text-slate-500 hover:text-black transition-colors text-sm font-bold">Cookie Policy</Link></li>
               </ul>
             </div>
           </div>
@@ -104,19 +96,19 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <h4 className="font-urbanist text-[10px] font-black tracking-[0.3em] uppercase text-blue-600 mb-8">Newsletter</h4>
             <p className="text-slate-500 text-xs font-bold mb-6 leading-relaxed">
-              Join 14,000+ members receiving early access to pro tech drops.
+              Subscribe to receive updates on pro tech drops and exclusive offers.
             </p>
             <form onSubmit={handleSubscribe} className="space-y-3">
               <div className="relative">
-                <input 
+                <input
                   required
-                  type="email" 
+                  type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email address" 
+                  placeholder="Email address"
                   className="w-full bg-gray-50 border border-gray-100 rounded-2xl py-4 px-5 text-sm focus:outline-none focus:border-blue-500 focus:bg-white transition-all font-bold shadow-inner"
                 />
-                <button 
+                <button
                   disabled={loading}
                   className="absolute right-2 top-2 h-10 w-10 bg-black text-white rounded-xl flex items-center justify-center hover:bg-blue-600 transition-all shadow-lg shadow-black/10 disabled:opacity-50"
                 >
@@ -125,6 +117,25 @@ export default function Footer() {
               </div>
               <p className="text-[9px] text-slate-400 font-bold px-2 uppercase tracking-widest">NO SPAM. JUST PURE TECH.</p>
             </form>
+          </div>
+        </div>
+
+        {/* Contact Row */}
+        <div className="py-12 border-t border-gray-100 mb-12">
+          <h4 className="font-urbanist text-[10px] font-black tracking-[0.3em] uppercase text-blue-600 mb-8">Contact Information</h4>
+          <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-16 text-slate-500 text-sm font-bold">
+            <div className="flex items-start gap-3">
+              <MapPin size={18} className="text-blue-600 shrink-0 mt-0.5" />
+              <span className="leading-relaxed">3014 Dauphine St Ste A PM3 357287, New Orleans, LA 70117, USA</span>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <Mail size={18} className="text-blue-600 shrink-0" />
+              <a href="mailto:info@primefixsolutions.co" className="hover:text-black transition-colors">info@primefixsolutions.co</a>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <Phone size={18} className="text-blue-600 shrink-0" />
+              <a href="tel:+14025089751" className="hover:text-black transition-colors">+1 (402) 508-9751</a>
+            </div>
           </div>
         </div>
 
@@ -144,11 +155,12 @@ export default function Footer() {
               PayPal
             </div>
           </div>
-          
+
           <div className="flex gap-10 text-[10px] font-black tracking-[0.2em] uppercase text-slate-400">
-            <Link to="/privacy-policy" className="hover:text-black transition-colors">Privacy Policy</Link>
-            <Link to="/terms-and-conditions" className="hover:text-black transition-colors">Terms of Service</Link>
-            <Link to="/cookie-policy" className="hover:text-black transition-colors">Cookie Settings</Link>
+            <div className="flex items-center gap-2">
+              <ShieldCheck size={14} className="text-blue-600" />
+              <span>Verified Merchant</span>
+            </div>
           </div>
         </div>
       </div>

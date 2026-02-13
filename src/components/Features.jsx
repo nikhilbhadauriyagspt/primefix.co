@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { 
   ShieldCheck, 
   Truck, 
-  Headset, 
   RotateCcw
 } from "lucide-react";
 
@@ -24,20 +23,12 @@ const features = [
     borderColor: "hover:border-emerald-200"
   },
   {
-    icon: Headset,
-    title: "Expert Support",
-    desc: "24/7 technical",
+    icon: RotateCcw,
+    title: "7-Day Returns",
+    desc: "Return window",
     bgColor: "bg-purple-50/50",
     iconColor: "text-purple-600",
     borderColor: "hover:border-purple-200"
-  },
-  {
-    icon: RotateCcw,
-    title: "Easy Returns",
-    desc: "15-day window",
-    bgColor: "bg-orange-50/50",
-    iconColor: "text-orange-600",
-    borderColor: "hover:border-orange-200"
   }
 ];
 
@@ -45,7 +36,7 @@ export default function Features() {
   return (
     <section className="bg-white font-urbanist py-4 md:py-6">
       <div className="max-w-[1920px] mx-auto px-6 md:px-10 lg:px-12">
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
           {features.map((item, index) => (
             <motion.div
               key={index}

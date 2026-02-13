@@ -19,7 +19,7 @@ export default function PolicyLayout({ title, subtitle, lastUpdated, children })
               <ChevronRight size={10} />
               <span className="text-slate-900">{title}</span>
             </nav>
-            <h1 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter uppercase leading-none mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-slate-900 tracking-tighter uppercase leading-none mb-6">
               {title.split(' ').slice(0, -1).join(' ')} <span className="text-blue-600 italic">{title.split(' ').slice(-1)}</span>
             </h1>
             {subtitle && (
