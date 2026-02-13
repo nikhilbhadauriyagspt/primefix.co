@@ -136,7 +136,7 @@ export default function Header() {
   const allSubCategories = categories.flatMap(parent => parent.children || []);
   const marqueeChips = allSubCategories.length > 0 
     ? [...allSubCategories.map(c => c.name), ...allSubCategories.map(c => c.name)] 
-    : ["Premium Laptops", "Office Printers", "Latest Accessories", "Tech Support"];
+    : ["Premium Laptops", "Office Printers", "Latest Accessories", "Tech Support", "Premium Laptops", "Office Printers", "Latest Accessories", "Tech Support"];
 
   const handleLogout = () => {
     localStorage.removeItem('user');
@@ -368,21 +368,17 @@ export default function Header() {
             </div>
 
             {/* 4. Marquee Categories (Hidden on mobile) */}
-            <div className="hidden lg:block flex-1 overflow-hidden relative">
+            <div className="hidden lg:block flex-1 overflow-hidden relative pause-on-hover">
               <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white to-transparent z-10"></div>
               <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent z-10"></div>
-              <motion.div 
-                className="flex items-center gap-4 whitespace-nowrap"
-                animate={{ x: [0, -2000] }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-              >
+              <div className="animate-marquee flex items-center gap-4 whitespace-nowrap">
                 {marqueeChips.map((c, idx) => {
                   const catSlug = categories.flatMap(p => [p, ...(p.children || [])]).find(x => x.name === c)?.slug || '';
                   return (
                     <Link key={idx} to={`/shop?category=${catSlug}`} className="h-9 px-5 bg-white border border-gray-100 rounded-full text-[10px] font-black text-gray-400 hover:text-black hover:border-black flex items-center transition-all uppercase tracking-tight">{c}</Link>
                   );
                 })}
-              </motion.div>
+              </div>
             </div>
 
           </div>
