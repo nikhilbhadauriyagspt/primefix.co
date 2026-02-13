@@ -441,7 +441,7 @@ export default function Header() {
                                 >
                                   <div className="h-14 w-14 rounded-xl bg-gray-50 flex items-center justify-center p-2 shrink-0">
                                     <img 
-                                      src={p.images ? `${API_BASE_URL}/${(typeof p.images === 'string' ? JSON.parse(p.images)[0] : p.images[0])}` : ''} 
+                                      src={p.images ? `${(typeof p.images === 'string' ? JSON.parse(p.images)[0] : p.images[0])}` : ''} 
                                       className="max-w-full max-h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform" 
                                       alt=""
                                       onError={(e) => { e.target.src = "https://via.placeholder.com/50x50"; }}

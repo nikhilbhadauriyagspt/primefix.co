@@ -53,7 +53,7 @@ export default function CartDrawer() {
                     <div key={item.id} className="flex gap-6 group">
                       <div className="h-24 w-24 rounded-2xl bg-gray-50 p-4 flex items-center justify-center flex-shrink-0 relative">
                         <img 
-                          src={item.images ? `${API_BASE_URL}/${(typeof item.images === 'string' ? JSON.parse(item.images)[0] : item.images[0])}` : ''} 
+                          src={item.images ? `${(typeof item.images === 'string' ? JSON.parse(item.images)[0] : item.images[0])}` : ''} 
                           alt={item.name}
                           className="max-w-full max-h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform"
                           onError={(e) => { e.target.src = "https://via.placeholder.com/100x100"; }}

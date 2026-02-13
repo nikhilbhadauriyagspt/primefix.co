@@ -55,7 +55,7 @@ export default function Cart() {
                 >
                   <div className="h-32 w-32 rounded-2xl bg-gray-50 p-4 flex items-center justify-center flex-shrink-0">
                     <img 
-                      src={item.images ? `${API_BASE_URL}/${(typeof item.images === 'string' ? JSON.parse(item.images)[0] : item.images[0])}` : ''} 
+                      src={item.images ? `${(typeof item.images === 'string' ? JSON.parse(item.images)[0] : item.images[0])}` : ''} 
                       alt={item.name}
                       className="max-w-full max-h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
                       onError={(e) => { e.target.src = "https://via.placeholder.com/150x150"; }}

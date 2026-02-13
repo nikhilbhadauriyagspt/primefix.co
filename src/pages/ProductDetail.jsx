@@ -71,7 +71,7 @@ export default function ProductDetail() {
   const getImages = (images) => {
     try {
       const imgs = typeof images === 'string' ? JSON.parse(images) : images;
-      return Array.isArray(imgs) ? imgs.map(img => `${API_BASE_URL}/${img}`) : [];
+      return Array.isArray(imgs) ? imgs.map(img => `/${img}`) : [];
     } catch (e) {
       return [];
     }
@@ -80,7 +80,7 @@ export default function ProductDetail() {
   const getImagePath = (images) => {
     try {
       const imgs = typeof images === 'string' ? JSON.parse(images) : images;
-      if (Array.isArray(imgs) && imgs.length > 0) return `${API_BASE_URL}/${imgs[0]}`;
+      if (Array.isArray(imgs) && imgs.length > 0) return `/${imgs[0]}`;
     } catch (e) { }
     return "https://via.placeholder.com/400x400?text=No+Image";
   };

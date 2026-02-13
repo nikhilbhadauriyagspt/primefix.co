@@ -33,7 +33,7 @@ export default function CategorySlider({ title, subtitle, products = [], bgColor
   const getImagePath = (images) => {
     try {
       const imgs = typeof images === 'string' ? JSON.parse(images) : images;
-      if (Array.isArray(imgs) && imgs.length > 0) return `${API_BASE_URL}/${imgs[0]}`;
+      if (Array.isArray(imgs) && imgs.length > 0) return `/${imgs[0]}`;
     } catch (e) { }
     return "https://via.placeholder.com/400x400?text=No+Image";
   };
